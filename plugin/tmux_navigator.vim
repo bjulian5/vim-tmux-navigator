@@ -120,7 +120,7 @@ function! s:TmuxAwareNavigate(direction)
     if g:tmux_navigator_preserve_zoom == 1
       let l:args .= ' -Z'
     endif
-    silent call system("tmux-yabai.sh" . ' ' . tr(a:direction, 'phjkl', 'lLDUR'))
+    silent call system("tmux-navigate.sh" . ' ' . tr(a:direction, 'phjkl', 'lLDUR'))
     if s:NeedsVitalityRedraw()
       redraw!
     endif
